@@ -1,0 +1,30 @@
+/*
+1. element/tag based styling
+2. id based styling
+3. class based styling*/
+
+/*element based styling
+it is not recommended for the larger applicaiotns.
+Because if we apply style to one element eg.div
+the same style will be applied to all the div tag
+*/
+body{
+    background-color: brown !important;
+}
+
+#outerDiv{
+    border: 2px solid;
+}
+
+#innerDiv1{
+    border: 1px solid;
+    margin:20px;
+}
+
+.div-outer{
+    border: 1px solid;
+    padding:10px;
+}
+.div-inner{
+    padding:10px;
+}
