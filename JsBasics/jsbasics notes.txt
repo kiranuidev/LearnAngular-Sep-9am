@@ -1,0 +1,11 @@
+javascript
+  Scripting language.
+  executed by interpreter i.e. line by line.
+to refer the javascript in the b browser?
+ <script src="filepath"></script>
+ideal place to keep the script tag is?
+   before closing the body tag.
+
+auto casting features
+ var i= 10// casts to integer
+ 
