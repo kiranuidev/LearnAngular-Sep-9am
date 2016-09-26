@@ -1,12 +1,14 @@
+
 var controls = {};
 controls.firstName = document.getElementById("txtFirstName");
 controls.lastName = document.getElementById("txtLastName");
 controls.registerButton = document.getElementById("btnRegister");
+var data="kliran";
 
 function getValuesFromControls(){
     var userDetails={};
-    userDetails.firstName=controls.firstName.value;
-    userDetails.lastName=controls.lastName.value;
+    userDetails.fName=controls.firstName.value;
+    userDetails.lName=controls.lastName.value;
 }
 
 function registerUser(){
