@@ -23,11 +23,10 @@
             book.name = htmlControls.bookName.value;
             book.author = htmlControls.author.value;
             book.price = htmlControls.price.value;
-            var isSaved=saveData(book);
-            if(isSaved){
-            clearData();
-            }
-            else{
+            var isSaved = saveData(book);
+            if (isSaved) {
+                clearData();
+            } else {
                 alert("data not saved");
             }
 
@@ -38,8 +37,7 @@
             if (novel.price == 2000) {
                 console.log(novel);
                 return true;
-            }
-            else{
+            } else {
                 false;
             }
         }

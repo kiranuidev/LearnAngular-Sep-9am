@@ -33,3 +33,6 @@
     
 
 })(window.bookApi={});
+function helloWorld(){
+    alert("hi");
+}
