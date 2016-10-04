@@ -1,35 +1,65 @@
-(function(){
-    
-    function phone(){
-        this.ISDCode="";
-        this.PhoneNumber="";
+(function () {
+
+    function phone() {
+        this.ISDCode = "";
+        this.PhoneNumber = "";
     }
-    
-    function person(){
-        var panNumber="CBDE67889Q";
-        this.firstName="";
-        this.lastName="";
-        this.getMaskedPAN= function(){
-            return "xxxxx-x"+panNumber.substring(6,10);
+
+    function person() {
+        var panNumber = "CBDE67889Q";
+        this.firstName = "";
+        this.lastName = "";
+        this.getMaskedPAN = function () {
+            return "xxxxx-x" + panNumber.substring(6, 10);
         };
-        
-        this.homePhone= new phone();
+        this.homePhone = new phone();
         this.mobilePhone = new phone();
     }
-    
-    var student= new person();
-    student.firstName="kiran";
+
+    var student = new person();
+    student.firstName = "kiran";
     var maskedData = student.getMaskedPAN();
     console.log(student);
-    student.marks=100;
-    
+    student.marks = 100;
+
     var employee = new person();
-    employee.firstName="Ravi";
     
+    
+    var designation = new Object(employee);
+    console.log(designation);
+    employee.firstName = "Ravi";
+    employee.gender = "M";
+
     var security = new person();
-    security.firstName="John";
+    security.firstName = "John";
+
+
+    person.prototype.gender = "";
+    var data = new Array();
+    console.log(data);
+    var users = [0, 1, 2, 3, 4, 5, 6];
+    Array.prototype.even = function () {
+        var output = [];
+        for (var i = 0; i < this.length; i++) {
+            if (i % 2 == 0) {
+                output.push(this[i]);
+            }
+        }
+        return output;
+    };
     
-   /* console.log(student);
+     Array.prototype.even = function () {
+        var output = [];
+        for (var i = 0; i < this.length; i++) {
+            if (i % 2 == 1) {
+                output.push(this[i]);
+            }
+        }
+        return output;
+    };
+    console.log(users.even());
+
+    console.log(student);
     console.log(employee);
-    console.log(security);*/
+    console.log(security);
 })();
