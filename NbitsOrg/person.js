@@ -19,16 +19,18 @@
     var student = new person();
     student.firstName = "kiran";
     var maskedData = student.getMaskedPAN();
-    console.log(student);
+    //console.log(student);
     student.marks = 100;
 
     var employee = new person();
-    
-    
+
+
     var designation = new Object(employee);
-    console.log(designation);
+
     employee.firstName = "Ravi";
     employee.gender = "M";
+    console.log(employee);
+    console.log(designation);
 
     var security = new person();
     security.firstName = "John";
@@ -47,8 +49,8 @@
         }
         return output;
     };
-    
-     Array.prototype.even = function () {
+
+    Array.prototype.even = function () {
         var output = [];
         for (var i = 0; i < this.length; i++) {
             if (i % 2 == 1) {
@@ -57,9 +59,9 @@
         }
         return output;
     };
-    console.log(users.even());
+   /* console.log(users.even());
 
     console.log(student);
     console.log(employee);
-    console.log(security);
+    console.log(security);*/
 })();
