@@ -1,0 +1,21 @@
+{
+  "name": "bootstrapdemo",
+  "homepage": "https://github.com/kiranuidev/LearnAngular-Sep-9am",
+  "authors": [
+    "kiranpaturi <kiran_p@k3informatics.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "fontawesome#^4.6.3"
+  }
+}
