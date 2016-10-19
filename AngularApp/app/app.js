@@ -1,3 +1,3 @@
 (function(){
-    angular.module("flipsnap",["header"]);
+    angular.module("flipsnap",["header","register"]);
 })();

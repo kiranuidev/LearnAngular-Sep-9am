@@ -1,16 +1,28 @@
-(function(){
-    function headerCtrl($scope){
-        $scope.brandName="FlipSnap";
-        $scope.headerUrl="app/header/header.html";
-        $scope.loadRegisterPage= function(){
-            $scope.contentUrl="app/register/register.html"
-        };
-         $scope.loadLoginPage= function(){
-            $scope.contentUrl="app/login/login.html"
-        };
+(function () {
+    function headerCtrl($scope) {
+        //$scope.navItems =["Home","Login","Register"];
+        $scope.navItems = [{
+                name: "Home",
+                templateUrl: "app/home/home.html"
+        },
+            {
+                name: "Login",
+                templateUrl: "app/login/login.html"
+        }, {
+                name: "Register",
+                templateUrl: "app/register/register.html"
+        }];
+        $scope.brandName = "FlipSnap";
+        $scope.headerUrl = "app/header/header.html";
+      
+        
+        $scope.loadPage = function (item) {
+            console.log(item);
+            $scope.contentUrl=item.templateUrl;
+        }
     }
-    
-    
-    angular.module("header").controller("headerCtrl",headerCtrl);
-    
+
+
+    angular.module("header").controller("headerCtrl", headerCtrl);
+
 })();
