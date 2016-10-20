@@ -16,9 +16,9 @@
         $scope.headerUrl = "app/header/header.html";
       
         
-        $scope.loadPage = function (item) {
-            console.log(item);
-            $scope.contentUrl=item.templateUrl;
+        $scope.loadPage = function (data) {
+           // console.log(kiran);
+            $scope.contentUrl=data.templateUrl;
         }
     }
 
