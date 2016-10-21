@@ -52,15 +52,32 @@
         <div class="col-xs-4">
             <select class="form-control"
                     ng-model="user.country"
-                    ng-options ="data.name for data in countries">
+                    ng-options ="data.name for data in countries"
+                    ng-change="loadStatesByCountry()">
                 <option value="">Please Select</option>
             </select>
            
         </div>
     </div>
-    
+     <div class="form-group">
+        <label  class="control-label col-xs-2">State</label>
+        <div class="col-xs-4">
+            <select class="form-control"
+                    ng-model="user.state"
+                    ng-options ="data.name for data in states">
+                <option value="">Please Select</option>
+            </select>
+           
+        </div>
+    </div>
+     <div class="form-group">
+        
+        <div class="col-xs-offset-2 col-xs-4">
+           <input type="checkbox" ng-model="user.agree">I agree Terms
+        </div>
+    </div>
    
-    <div class="form-group">
+    <div class="form-group" ng-if="user.agree">
         <div class="col-xs-offset-2 col-xs-4">
             <button ng-click="register()" class="btn btn-primary">Register</button>
         </div>

@@ -996,6 +996,11 @@
             }
 ];
 
+        $scope.loadStatesByCountry = function () {
+            var countryCode = $scope.user.country.code;
+            $scope.states = getStateByCountry(countryCode);
+        };
+
 
 
         function getStateByCountry(code) {
