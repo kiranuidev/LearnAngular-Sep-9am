@@ -1,5 +1,5 @@
 (function(){
-    angular.module("register",["header"]);
+    angular.module("register",[]);
     
     angular.module("register")
     .config(function(){

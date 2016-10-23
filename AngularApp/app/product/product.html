@@ -1,0 +1,16 @@
+<div ng-controller="productCtrl">
+    <h1>Products</h1>
+    <table class="table table-striped">
+
+        <tr>
+            <td>S.No</td>
+            <td>Model Name</td>
+            <td>Price</td>
+        </tr>
+        <tr ng-repeat="product in productList">
+            <td>{{$index+1}}</td>
+            <td>{{product.modelName}}</td>
+            <td>{{product.modelPrice}}</td>
+        </tr>
+    </table>
+</div>
