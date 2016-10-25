@@ -1,6 +1,6 @@
 (
     function () {
-        function productSvc() {
+        function productSvc($q) {
             this.getProducts = function () {
                 var products = [{
                         modelName: "Moto E3 Power(Black, 16GB)",
@@ -32,8 +32,25 @@
     ];
                 return products;
             };
+            this.counter = function(){
+                
+                var dfd = $q.defer();
+                /*var result;
+                for(var i=0;i<1000000000;i++){
+                    result=i;
+                    if(i==1000000000){
+                        dfd.resolve(result);
+                    }
+                }*/
+                setTimeout(function(){
+                    dfd.resolve(1000000);
+                },5000);
+               
+                return dfd.promise;
+                
+            };
         }
         angular.module("product")
-            .service("productSvc", [productSvc]);
+            .service("productSvc", ["$q",productSvc]);
 
     })();
