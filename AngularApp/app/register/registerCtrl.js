@@ -21,8 +21,17 @@
         $scope.register = function () {
             console.log($scope.user);
         };
-        $scope.countries = lookupSvc.getCountries();
+       // $scope.countries = lookupSvc.getCountries();
 
+        lookupSvc.getCountriesFromApi()
+        .then(function(response){
+            //console.log(response);
+            $scope.countries = response.data.countries;
+        })
+        .catch(function(errorResponse){
+            console.log(errorResponse);
+        });
+        
         $scope.loadStatesByCountry = function () {
             var countryCode = $scope.user.country.code;
             $scope.states = getStateByCountry(countryCode);
