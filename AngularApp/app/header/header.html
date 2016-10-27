@@ -12,16 +12,15 @@
     <!-- Collection of nav links and other content for toggling -->
     <div id="navbarCollapse" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-            <li ng-repeat="item in navItems" 
-                ng-click="loadPage(item)">
+            <li ng-repeat="item in navItems" ng-click="loadPage(item)">
                 <a href="#">{{item.name}}</a></li>
-          <!--  <li><a href="#">Home</a></li>
+            <!--  <li><a href="#">Home</a></li>
             <li><a href="#">Profile</a></li>
             <li><a href="#">Messages</a></li>-->
         </ul>
         <ul class="nav navbar-nav navbar-right">
-             <li ng-click="loadRegisterPage()"><a href="#">Register</a></li>
-            <li ng-click="loadLoginPage()"><a href="#">Login</a></li>
+            <li><a href="#">Cart <span class="badge">{{cartItems}}</span></a></li>
+
         </ul>
     </div>
 </nav>

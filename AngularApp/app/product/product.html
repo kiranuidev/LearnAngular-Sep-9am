@@ -12,6 +12,10 @@
             <td>{{$index+1}}</td>
             <td>{{product.modelName}}</td>
             <td>{{product.modelPrice}}</td>
+            <td>
+                <button class="btn btn-primary" ng-if="!product.selected" ng-click="addToCart(product)">Add To Cart</button>
+                <button class="btn btn-warning" ng-if="product.selected" ng-click="removeFromCart(product)">Remove From Cart</button>
+            </td>
         </tr>
     </table>
 </div>
