@@ -8,9 +8,10 @@
               $scope.counter = response;
           });
           $scope.productList = productSvc.getProducts();*/
+        $scope.recordCount = 4;
         productSvc.getProductsFromApi()
             .then(function (res) {
-                $scope.products = res.data.products;
+                $scope.vehicles = res.data.vehicles;
             })
             .catch(function (errorResp) {
                 $scope.showError = true;
@@ -31,6 +32,25 @@
 
         };
 
+        $scope.sortByPrice = function () {
+            /*if($scope.orderByPrice=="Price"){
+               $scope.orderByPrice="-Price"; 
+            }
+            else{
+               $scope.orderByPrice="Price";  
+            }*/
+
+            $scope.orderByPrice = $scope.orderByPrice == "Price" ?
+                "-Price" : "Price";
+        };
+        $scope.showMore = function () {
+            $scope.recordCount += 4;
+        };
+        $scope.showLess = function () {
+            if ($scope.recordCount > 4) {
+                $scope.recordCount -= 4;
+            }
+        }
     }
     angular.module('product')
         .controller("productCtrl", ["$scope", "productSvc", "$rootScope", productCtrl])

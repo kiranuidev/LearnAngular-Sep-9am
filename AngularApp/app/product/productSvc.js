@@ -14,7 +14,7 @@
             };
             this.getProductsFromApi=function(){
                 var dfd= $q.defer();
-                $http.get("app/api/products.json")
+                $http.get("app/api/vehicles.json")
                 .then(function(res){
                     dfd.resolve(res);
                 })
