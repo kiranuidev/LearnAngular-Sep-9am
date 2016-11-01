@@ -1,7 +1,7 @@
 (
     function () {
 
-        function lookupSvc($http,$q) {
+        function lookupSvc($http, $q) {
             this.getCountries = function () {
                 var countries = [
                     {
@@ -1000,21 +1000,36 @@
         }];
                 return navItems;
             };
-            
-            this.getCountriesFromApi= function(){
-              var dfd= $q.defer();
+
+            this.getCountriesFromApi = function () {
+                var dfd = $q.defer();
                 $http.get("app/api/countries.json")
-                .then(function(response){
+                    .then(function (response) {
+                        dfd.resolve(response);
+                    })
+                    .catch(function (response) {
+                        dfd.reject(response);
+                    });
+
+                return dfd.promise;
+            };
+
+            this.getLocationFromMaps = function (val) {
+                var dfd = $q.defer();
+                $http.get('//maps.googleapis.com/maps/api/geocode/json', {
+                    params: {
+                        address: val,
+                        sensor: false
+                    }
+                }).then(function (response) {
                     dfd.resolve(response);
+                }).catch(function(error){
+                    dfd.reject(error);
                 })
-                .catch(function(response){
-                    dfd.reject(response);
-                });
-                
                 return dfd.promise;
             };
         }
         angular.module("lookup")
-            .service("lookupSvc", ["$http","$q",lookupSvc])
+            .service("lookupSvc", ["$http", "$q", lookupSvc])
     }
 )();

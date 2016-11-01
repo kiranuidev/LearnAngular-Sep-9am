@@ -1,5 +1,5 @@
 (function () {
-    angular.module("flipsnap", ["register", "lookup", "header", "product","custom"]);
+    angular.module("flipsnap", ["register", "lookup", "header", "product","custom",'ui.bootstrap']);
 
     angular.module("flipsnap")
         .config(function () {

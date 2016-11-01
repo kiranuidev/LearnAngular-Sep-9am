@@ -1,6 +1,6 @@
 (function () {
 
-    function productCtrl($scope, productSvc, $rootScope) {
+    function productCtrl($scope, productFact, $rootScope) {
         /*  productSvc.counter()
               .then(function (response) {
               $scope.counter = response;
@@ -9,7 +9,7 @@
           });
           $scope.productList = productSvc.getProducts();*/
         $scope.recordCount = 4;
-        productSvc.getProductsFromApi()
+        productFact.getProductsFromApi()
             .then(function (res) {
                 $scope.vehicles = res.data.vehicles;
             })
@@ -53,5 +53,5 @@
         }
     }
     angular.module('product')
-        .controller("productCtrl", ["$scope", "productSvc", "$rootScope", productCtrl])
+        .controller("productCtrl", ["$scope", "productFact", "$rootScope", productCtrl]);
 })();
