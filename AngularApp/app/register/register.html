@@ -53,6 +53,8 @@
                    placeholder="Phone Number"
                    class="form-control"
                    ng-model="user.phone"
+                   custom-numbers-only
+                   customlength="10"
                    >
            
         </div>
@@ -100,9 +102,11 @@
         </div>
     </div>
    
-    <div class="form-group" ng-if="user.agree">
+    <div class="form-group" >
         <div class="col-xs-offset-2 col-xs-4">
-            <button ng-click="register()" class="btn btn-primary">Register</button>
+            <button custom-click ="register()"
+                    
+                    class="btn btn-primary">Register</button>
         </div>
     </div>
     {{user}}
