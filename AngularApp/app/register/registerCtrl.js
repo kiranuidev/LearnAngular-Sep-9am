@@ -1,5 +1,6 @@
 (function () {
     function registerCtrl($scope, lookupSvc,$http) {
+        $scope.pageName="Register";
         var states = [{
             "name": "Telangana",
             code: "TS",

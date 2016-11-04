@@ -19,9 +19,12 @@
         return {
             restrict: "A",
             link: function (scope, ele, attrs) {
+                console.log(attrs);
+                console.log(scope);
                 ele.bind("click", function () {
                     var fun = attrs["customClick"];
                     scope.$eval(fun);
+                    scope.$apply();
                 });
             }
         };
@@ -43,6 +46,8 @@
             }
         }
     }
+
+
     /*diretive name is customLogo -- camel casing*/
     angular.module("custom")
         .directive("customLogo", [customLogo])

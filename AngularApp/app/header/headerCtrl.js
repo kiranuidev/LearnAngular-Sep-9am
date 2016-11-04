@@ -5,7 +5,8 @@
         $scope.navItems = lookupSvc.getNavItems();
         $scope.brandName = "FlipSnap";
         $scope.headerUrl = "app/header/header.html";
-
+        $scope.companyName="TATA";
+        $scope.userDetails ="Ravi";
 
         $scope.loadPage = function (data) {
             // console.log(kiran);
