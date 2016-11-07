@@ -53,12 +53,12 @@
                        |filter:{Model:searchModel,Make:searchMake}
                        |orderBy:orderByPrice
                        |limitTo:recordCount"}>
-            <td>{{$index+1}}</td>
-            <td>{{vehicle.Year}}</td>
-            <td>{{vehicle.Make}}</td>
-            <td>{{vehicle.Model}}</td>
-   <td>{{vehicle.Price|currency:"Rs."}}</td>
-               <td>{{vehicle.Contact|phoneFomatter:country}}</td>
+            <td>{{::$index+1}}</td>
+            <td>{{::vehicle.Year}}</td>
+            <td>{{::vehicle.Make}}</td>
+            <td>{{::vehicle.Model}}</td>
+   <td>{{::vehicle.Price|currency:"Rs."}}</td>
+               <td>{{::vehicle.Contact|phoneFomatter:country}}</td>
         </tr>
     </table>
 

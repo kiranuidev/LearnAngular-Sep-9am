@@ -1,6 +1,16 @@
 (function () {
     function registerCtrl($scope, lookupSvc,$http) {
-        $scope.pageName="Register";
+        setTimeout(function(){
+               $scope.pageName="Register";
+           $scope.$apply();
+        },5000);
+        
+        
+        /*$scope.$watch("pageName",function(newdata,oldData){
+            console.log(newdata);
+            console.log(oldData);
+        })*/
+    
         var states = [{
             "name": "Telangana",
             code: "TS",
