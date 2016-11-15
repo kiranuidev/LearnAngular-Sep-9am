@@ -2,9 +2,24 @@
     function () {
         'use strict';
         angular.module("demoApp", ['ui.router']);
+        angular.module("demoApp")
+        .provider("version",[function(){
+            this.versionNumber="10.0.0";
+            this.createVersionNumber = function(data){
+                this.versionNumber= data;
+            };
+            this.$get =function(){
+                return this.versionNumber;
+            };
+        }]);
 
         angular.module('demoApp')
-            .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+            .config(['$stateProvider', '$urlRouterProvider','versionProvider', function ($stateProvider, $urlRouterProvider,versionProvider) {
+                
+                     console.log(versionProvider.versionNumber);
+                
+                versionProvider.createVersionNumber("2.0.0");
+                 console.log(versionProvider.versionNumber);
                 $urlRouterProvider.otherwise("/home");
                 //definig the states.
                 var homeObj = {
@@ -32,8 +47,9 @@
 
     }]);
         
-        function homeCtrl($scope,$state){
+        function homeCtrl($scope,$state,version){
             console.log($state);
+            console.log(version);
         }
 
         function registerCtrl($scope,$state) {
